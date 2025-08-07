@@ -1,0 +1,6 @@
+# Python code to read input_text.txt
+with open("input_text.txt","r") as file:
+    content = file.read()
+    print(content)
+
+
