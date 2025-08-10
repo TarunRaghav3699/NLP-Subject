@@ -91,3 +91,27 @@ df = df.sort_values(by="Frequency", ascending=False)
 df.to_csv("word_frequency.csv", index=False)
 
 print("\nWord frequency table saved to word_frequency.csv")
+
+
+
+
+# TASK 5: Bonus - Bar Plot of Top 10 Words
+import matplotlib.pyplot as plt
+
+# Get top 10 most common words
+top_10 = word_counts.most_common(10)
+words, frequencies = zip(*top_10)
+
+# Create bar plot
+plt.figure(figsize=(10, 6))
+plt.bar(words, frequencies, color='skyblue')
+plt.xlabel("Words")
+plt.ylabel("Frequency")
+plt.title("Top 10 Most Frequent Words")
+plt.xticks(rotation=45)
+plt.tight_layout()
+
+# Save the plot
+plt.savefig("top_words.png")
+
+print("\nBar plot saved as top_words.png")
